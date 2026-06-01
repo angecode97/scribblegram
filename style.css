@@ -1,0 +1,388 @@
+:root {
+  --ink: #111111;
+  --paper: #ffffff;
+  --soft-gray: #f0f0f0;
+  --scratch: #d8d8d8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.035) 1px, transparent 1px),
+    linear-gradient(rgba(0, 0, 0, 0.025) 1px, transparent 1px),
+    var(--paper);
+  background-size: 38px 38px;
+  color: var(--ink);
+  font-family: "Comic Sans MS", "Trebuchet MS", Arial, sans-serif;
+}
+
+button {
+  color: inherit;
+  font: inherit;
+}
+
+.phone-frame {
+  width: 100%;
+  max-width: 480px;
+  min-height: 100vh;
+  margin: 0 auto;
+  background: var(--paper);
+  border-left: 2px solid var(--ink);
+  border-right: 2px solid var(--ink);
+}
+
+.profile-header {
+  padding: 10px 12px 14px;
+  background:
+    repeating-linear-gradient(-8deg, transparent 0 13px, rgba(0, 0, 0, 0.025) 14px 15px),
+    var(--paper);
+  border-bottom: 3px solid var(--ink);
+}
+
+.top-bar,
+.profile-main,
+.music-row,
+.button-row,
+.stats {
+  display: flex;
+  align-items: center;
+}
+
+.top-bar {
+  justify-content: space-between;
+  min-height: 42px;
+}
+
+.username-wrap {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transform: rotate(-0.5deg);
+}
+
+.username-wrap h1 {
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.lock-icon {
+  font-size: 1rem;
+  transform: rotate(7deg);
+}
+
+.icon-button,
+.person-button,
+.small-add-button,
+.profile-button,
+.back-button {
+  border: 2px solid var(--ink);
+  background: var(--soft-gray);
+  box-shadow: 2px 2px 0 var(--ink);
+  cursor: default;
+}
+
+.scribble-tap {
+  transition: transform 120ms ease, box-shadow 120ms ease;
+}
+
+.scribble-tap:active {
+  transform: translate(2px, 2px) rotate(-1deg);
+  box-shadow: 0 0 0 var(--ink);
+}
+
+.icon-button {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 44% 52% 48% 46%;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.menu-button {
+  gap: 4px;
+  padding: 7px;
+}
+
+.menu-button span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: var(--ink);
+  border-radius: 999px;
+}
+
+.profile-main {
+  gap: 18px;
+  padding: 14px 0 8px;
+}
+
+.avatar-wrap {
+  position: relative;
+  flex: 0 0 96px;
+  width: 96px;
+  height: 96px;
+  border: 3px solid var(--ink);
+  border-radius: 47% 52% 45% 55%;
+  overflow: hidden;
+  transform: rotate(-2deg);
+  background: var(--paper);
+}
+
+.avatar-wrap::after {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border: 2px dashed var(--ink);
+  border-radius: 54% 45% 52% 46%;
+  pointer-events: none;
+}
+
+.avatar {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 76%;
+  transform: scale(1.42);
+  transform-origin: center 72%;
+}
+
+.stats-area {
+  flex: 1;
+  min-width: 0;
+}
+
+.doodle-row {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 8px;
+  font-size: 1.25rem;
+}
+
+.doodle-row span:nth-child(1) {
+  transform: rotate(-12deg);
+}
+
+.doodle-row span:nth-child(2) {
+  transform: rotate(8deg);
+}
+
+.doodle-row span:nth-child(3) {
+  transform: rotate(15deg);
+}
+
+.stats {
+  justify-content: space-between;
+  gap: 6px;
+  text-align: center;
+}
+
+.stats div {
+  flex: 1;
+}
+
+.stats strong,
+.stats span {
+  display: block;
+}
+
+.stats strong {
+  font-size: 1rem;
+}
+
+.stats span {
+  font-size: 0.78rem;
+}
+
+.bio-area {
+  padding-top: 2px;
+}
+
+.display-name,
+.bio-line {
+  margin: 0;
+}
+
+.display-name {
+  font-weight: 700;
+}
+
+.bio-line {
+  max-width: 23rem;
+  margin-top: 3px;
+  font-size: 0.88rem;
+  line-height: 1.25;
+}
+
+.action-area {
+  margin-top: 12px;
+}
+
+.music-row {
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.music-pill {
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+  min-height: 32px;
+  padding: 5px 10px;
+  border: 2px solid var(--ink);
+  border-radius: 18px 15px 20px 14px;
+  background:
+    repeating-linear-gradient(110deg, var(--soft-gray) 0 8px, var(--scratch) 9px 10px);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.small-add-button,
+.profile-button,
+.person-button {
+  min-height: 34px;
+  border-radius: 9px 13px 8px 11px;
+  font-weight: 700;
+}
+
+.small-add-button {
+  padding: 4px 12px;
+  background: var(--paper);
+  transform: rotate(1deg);
+}
+
+.button-row {
+  gap: 8px;
+}
+
+.profile-button {
+  flex: 1;
+  min-width: 0;
+  padding: 6px 8px;
+  background:
+    repeating-linear-gradient(-18deg, var(--soft-gray) 0 9px, #e8e8e8 10px 11px);
+  font-size: 0.9rem;
+}
+
+.profile-button:nth-child(1) {
+  transform: rotate(-0.8deg);
+}
+
+.profile-button:nth-child(2) {
+  transform: rotate(0.7deg);
+}
+
+.person-button {
+  width: 38px;
+  flex: 0 0 38px;
+  font-size: 1.2rem;
+  background: var(--paper);
+}
+
+.tabs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  height: 42px;
+  border-bottom: 2px solid var(--ink);
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.tabs span {
+  height: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.active-tab {
+  border-bottom: 4px solid var(--ink);
+}
+
+.post-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+  padding: 3px;
+}
+
+.post {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border: 2px solid var(--ink);
+  background: var(--soft-gray);
+  object-fit: cover;
+  cursor: pointer;
+  transform: rotate(var(--tilt));
+}
+
+.image-viewer {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 68px 12px 18px;
+  background: rgba(255, 255, 255, 0.97);
+}
+
+.image-viewer.is-open {
+  display: flex;
+}
+
+.image-viewer img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.back-button {
+  position: fixed;
+  top: 14px;
+  left: 14px;
+  min-height: 40px;
+  padding: 7px 13px;
+  border-radius: 12px 10px 14px 9px;
+  background: var(--paper);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+@media (max-width: 360px) {
+  .profile-main {
+    gap: 12px;
+  }
+
+  .avatar-wrap {
+    flex-basis: 82px;
+    width: 82px;
+    height: 82px;
+  }
+
+  .stats span,
+  .profile-button {
+    font-size: 0.72rem;
+  }
+}
+
+@media (min-width: 481px) {
+  body {
+    padding: 18px 0;
+  }
+
+  .phone-frame {
+    min-height: calc(100vh - 36px);
+    border-top: 2px solid var(--ink);
+    border-bottom: 2px solid var(--ink);
+  }
+}

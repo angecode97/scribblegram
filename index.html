@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ScribbleGram</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="phone-frame" aria-label="ScribbleGram profile page">
+    <header class="profile-header">
+      <nav class="top-bar" aria-label="Profile navigation">
+        <button class="icon-button scribble-tap" type="button" aria-label="Create new post">+</button>
+
+        <div class="username-wrap" aria-label="Private account angeloyamamoto">
+          <span class="lock-icon" aria-hidden="true">▧</span>
+          <h1>angeloyamamoto</h1>
+        </div>
+
+        <button class="icon-button menu-button scribble-tap" type="button" aria-label="Open menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </nav>
+
+      <section class="profile-main" aria-label="Profile information">
+        <div class="avatar-wrap">
+          <img src="assets/profile picture.jpg" alt="Angelo Yamamoto profile avatar" class="avatar">
+        </div>
+
+        <div class="stats-area">
+          <div class="doodle-row" aria-hidden="true">
+            <span>★</span>
+            <span>⌁</span>
+            <span>♡</span>
+          </div>
+
+          <div class="stats">
+            <div>
+              <strong>46</strong>
+              <span>posts</span>
+            </div>
+            <div>
+              <strong>484</strong>
+              <span>followers</span>
+            </div>
+            <div>
+              <strong>508</strong>
+              <span>following</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="bio-area" aria-label="Profile bio">
+        <p class="display-name">Angelo Yamamoto</p>
+        <p class="bio-line">professional doodle collector, accidental art disaster</p>
+      </section>
+
+      <section class="action-area" aria-label="Profile actions">
+        <div class="music-row">
+          <span class="music-pill">♪ Lovesick Mura Masa</span>
+          <button class="small-add-button scribble-tap" type="button">Add</button>
+        </div>
+
+        <div class="button-row">
+          <button class="profile-button scribble-tap" type="button">Edit profile</button>
+          <button class="profile-button scribble-tap" type="button">Share profile</button>
+          <button class="person-button scribble-tap" type="button" aria-label="Add friend">+</button>
+        </div>
+      </section>
+    </header>
+
+    <div class="tabs" aria-hidden="true">
+      <span class="active-tab">▦</span>
+      <span>◎</span>
+      <span>☻</span>
+    </div>
+
+    <section id="postGrid" class="post-grid" aria-label="ScribbleGram posts"></section>
+  </main>
+
+  <section id="imageViewer" class="image-viewer" aria-hidden="true">
+    <button id="backButton" class="back-button" type="button">← Back</button>
+    <img id="viewerImage" src="" alt="Selected ScribbleGram post">
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
